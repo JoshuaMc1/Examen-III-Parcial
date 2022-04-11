@@ -241,7 +241,7 @@ $sentenciaCiudad = mysqli_query($conection, "SELECT * FROM ciudad");
                         <div class="col-lg-6 mb-3">
                             <div class="card border-morado bg-dark">
                                 <div class="card-header bg-morado text-center">
-                                    <h5 class="fw-bold">hombres por ciudad</h5>
+                                    <h5 class="fw-bold">Hombres por ciudad</h5>
                                 </div>
                                 <div class="card-body">
                                     <canvas id="grafico6"></canvas>
