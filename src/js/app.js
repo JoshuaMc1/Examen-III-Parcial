@@ -64,33 +64,21 @@ $("#graficas").click(function () {
             console.log(data);
             var name = [];
             var cantidad = [];
+            var color = ['RGB(255, 51, 51)','RGB(255, 131, 51)','RGB(255, 79, 51 )','RGB(255, 181, 51 )','RGB(51, 255, 131)','RGB(51, 227, 255)','RGB(51, 116, 255)','RGB(85, 51, 255)','RGB(144, 51, 255)','RGB(255, 51, 209)','RGB(57, 255, 150)','RGB(0, 58, 159)'];
+			var bordercolor =  ['RGB(255, 51, 51)','RGB(255, 131, 51)','RGB(255, 79, 51 )','RGB(255, 181, 51 )','RGB(51, 255, 131)','RGB(51, 227, 255)','RGB(51, 116, 255)','RGB(85, 51, 255)','RGB(144, 51, 255)','RGB(255, 51, 209)','RGB(57, 255, 150)','RGB(0, 58, 159)'];
 
             for (var i in data) {
                 name.push(data[i].Pais);
                 cantidad.push(data[i].total);
             }
 
-            const COLORS = [
-                '#4dc9f6',
-                '#f67019',
-                '#f53794',
-                '#537bc4',
-                '#acc236',
-                '#166a8f',
-                '#00a950',
-                '#58595b',
-                '#8549ba'
-            ];
-
             var chartdata = {
                 labels: name,
                 datasets: [
                     {
                         label: 'Personas por pais',
-                        backgroundColor: '#49e2ff',
-                        borderColor: '#46d5f1',
-                        hoverBackgroundColor: '#CCCCCC',
-                        hoverBorderColor: '#666666',
+                        backgroundColor: color,
+                        borderColor: bordercolor,
                         data: cantidad
                     }
                 ]
@@ -100,6 +88,197 @@ $("#graficas").click(function () {
 
             var barGraph = new Chart(graphTarget, {
                 type: 'bar',
+                data: chartdata
+            });
+        }
+    });
+
+    $.ajax({
+        type: "POST",
+        url: "./src/php/funciones/graficos/grafico2.php",
+        async: true,
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+            var name = [];
+            var cantidad = [];
+            var color = ['RGB(51, 227, 255)','RGB(51, 116, 255)','RGB(85, 51, 255)','RGB(144, 51, 255)','RGB(255, 51, 209)','RGB(57, 255, 150)','RGB(0, 58, 159)','RGB(255, 51, 51)','RGB(255, 131, 51)','RGB(255, 79, 51 )','RGB(255, 181, 51 )','RGB(51, 255, 131)'];
+			var bordercolor =  ['RGB(255, 51, 51)','RGB(255, 131, 51)','RGB(255, 79, 51 )','RGB(255, 181, 51 )','RGB(51, 255, 131)','RGB(51, 227, 255)','RGB(51, 116, 255)','RGB(85, 51, 255)','RGB(144, 51, 255)','RGB(255, 51, 209)','RGB(57, 255, 150)','RGB(0, 58, 159)'];
+
+            for (var i in data) {
+                name.push(data[i].Ciudad);
+                cantidad.push(data[i].total);
+            }
+
+            var chartdata = {
+                labels: name,
+                datasets: [
+                    {
+                        label: 'Personas por ciudades',
+                        backgroundColor: color,
+                        borderColor: bordercolor,
+                        data: cantidad
+                    }
+                ]
+            };
+
+            var graphTarget = $("#grafico2");
+
+            var barGraph = new Chart(graphTarget, {
+                type: 'bar',
+                data: chartdata
+            });
+        }
+    });
+
+    $.ajax({
+        type: "POST",
+        url: "./src/php/funciones/graficos/grafico3.php",
+        async: true,
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+            var name = [];
+            var cantidad = [];
+            var color = ['RGB(255, 51, 51)','RGB(255, 131, 51)','RGB(255, 79, 51 )','RGB(255, 181, 51 )','RGB(51, 255, 131)','RGB(51, 227, 255)','RGB(51, 116, 255)','RGB(85, 51, 255)','RGB(144, 51, 255)','RGB(255, 51, 209)','RGB(57, 255, 150)','RGB(0, 58, 159)'];
+			var bordercolor =  ['RGB(255, 51, 51)','RGB(255, 131, 51)','RGB(255, 79, 51 )','RGB(255, 181, 51 )','RGB(51, 255, 131)','RGB(51, 227, 255)','RGB(51, 116, 255)','RGB(85, 51, 255)','RGB(144, 51, 255)','RGB(255, 51, 209)','RGB(57, 255, 150)','RGB(0, 58, 159)'];
+
+            for (var i in data) {
+                name.push(data[i].Pais);
+                cantidad.push(data[i].total);
+            }
+
+            var chartdata = {
+                labels: name,
+                datasets: [
+                    {
+                        label: 'Mujeres por pais',
+                        backgroundColor: color,
+                        borderColor: bordercolor,
+                        data: cantidad
+                    }
+                ]
+            };
+
+            var graphTarget = $("#grafico3");
+
+            var barGraph = new Chart(graphTarget, {
+                type: 'line',
+                data: chartdata
+            });
+        }
+    });
+
+    $.ajax({
+        type: "POST",
+        url: "./src/php/funciones/graficos/grafico4.php",
+        async: true,
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+            var name = [];
+            var cantidad = [];
+            var color = ['RGB(51, 227, 255)','RGB(51, 116, 255)','RGB(85, 51, 255)','RGB(144, 51, 255)','RGB(255, 51, 209)','RGB(57, 255, 150)','RGB(0, 58, 159)','RGB(255, 51, 51)','RGB(255, 131, 51)','RGB(255, 79, 51 )','RGB(255, 181, 51 )','RGB(51, 255, 131)'];
+			var bordercolor =  ['RGB(255, 51, 51)','RGB(255, 131, 51)','RGB(255, 79, 51 )','RGB(255, 181, 51 )','RGB(51, 255, 131)','RGB(51, 227, 255)','RGB(51, 116, 255)','RGB(85, 51, 255)','RGB(144, 51, 255)','RGB(255, 51, 209)','RGB(57, 255, 150)','RGB(0, 58, 159)'];
+            for (var i in data) {
+                name.push(data[i].Pais);
+                cantidad.push(data[i].total);
+            }
+
+            var chartdata = {
+                labels: name,
+                datasets: [
+                    {
+                        label: 'Hombres por pais',
+                        backgroundColor: color,
+                        borderColor: bordercolor,
+                        hoverBackgroundColor: '#CCCCCC',
+                        hoverBorderColor: '#666666',
+                        data: cantidad
+                    }
+                ]
+            };
+
+            var graphTarget = $("#grafico4");
+
+            var barGraph = new Chart(graphTarget, {
+                type: 'line',
+                data: chartdata
+            });
+        }
+    });
+
+    $.ajax({
+        type: "POST",
+        url: "./src/php/funciones/graficos/grafico5.php",
+        async: true,
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+            var name = [];
+            var cantidad = [];
+            var color = ['RGB(255, 51, 51)','RGB(255, 131, 51)','RGB(255, 79, 51 )','RGB(255, 181, 51 )','RGB(51, 255, 131)','RGB(51, 227, 255)','RGB(51, 116, 255)','RGB(85, 51, 255)','RGB(144, 51, 255)','RGB(255, 51, 209)','RGB(57, 255, 150)','RGB(0, 58, 159)'];
+			var bordercolor =  ['RGB(255, 51, 51)','RGB(255, 131, 51)','RGB(255, 79, 51 )','RGB(255, 181, 51 )','RGB(51, 255, 131)','RGB(51, 227, 255)','RGB(51, 116, 255)','RGB(85, 51, 255)','RGB(144, 51, 255)','RGB(255, 51, 209)','RGB(57, 255, 150)','RGB(0, 58, 159)'];
+
+            for (var i in data) {
+                name.push(data[i].Ciudad);
+                cantidad.push(data[i].total);
+            }
+
+            var chartdata = {
+                labels: name,
+                datasets: [
+                    {
+                        label: 'Mujeres por ciudad',
+                        backgroundColor: color,
+                        bordercolor: bordercolor,
+                        data: cantidad
+                    }
+                ]
+            };
+
+            var graphTarget = $("#grafico5");
+
+            var barGraph = new Chart(graphTarget, {
+                type: 'pie',
+                data: chartdata
+            });
+        }
+    });
+
+    $.ajax({
+        type: "POST",
+        url: "./src/php/funciones/graficos/grafico6.php",
+        async: true,
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+            var name = [];
+            var cantidad = [];
+            var color = ['RGB(51, 227, 255)','RGB(51, 116, 255)','RGB(85, 51, 255)','RGB(144, 51, 255)','RGB(255, 51, 209)','RGB(57, 255, 150)','RGB(0, 58, 159)','RGB(255, 51, 51)','RGB(255, 131, 51)','RGB(255, 79, 51 )','RGB(255, 181, 51 )','RGB(51, 255, 131)'];
+			var bordercolor =  ['RGB(255, 51, 51)','RGB(255, 131, 51)','RGB(255, 79, 51 )','RGB(255, 181, 51 )','RGB(51, 255, 131)','RGB(51, 227, 255)','RGB(51, 116, 255)','RGB(85, 51, 255)','RGB(144, 51, 255)','RGB(255, 51, 209)','RGB(57, 255, 150)','RGB(0, 58, 159)'];
+
+            for (var i in data) {
+                name.push(data[i].Ciudad);
+                cantidad.push(data[i].total);
+            }
+
+            var chartdata = {
+                labels: name,
+                datasets: [
+                    {
+                        label: 'Hombres por ciudad',
+                        backgroundColor: color,
+                        bordercolor: bordercolor,
+                        data: cantidad
+                    }
+                ]
+            };
+
+            var graphTarget = $("#grafico6");
+
+            var barGraph = new Chart(graphTarget, {
+                type: 'pie',
                 data: chartdata
             });
         }

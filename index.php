@@ -96,8 +96,10 @@ $sentenciaCiudad = mysqli_query($conection, "SELECT * FROM ciudad");
                                                             <td>' . $data["totalHombres"] . '</td>
                                                             <td>' . $data["totalMujeres"] . '</td>
                                                             <td>
+                                                                <div class="btn-group">
                                                                 <a class="btn btn-sm btn-warning" href="./src/php/controller/controller.php?acs=1&idReg=' . $data["idRegistro"] . '" role="button"><i class="fas fa-edit"></i></a>
                                                                 <a class="btn btn-sm btn-danger" href="./src/php/controller/controller.php?acs=2&idReg=' . $data["idRegistro"] . '" role="button"><i class="fas fa-trash"></i></a>
+                                                                </div>
                                                             </td>
                                                         </tr>
                                                     ';
@@ -226,7 +228,7 @@ $sentenciaCiudad = mysqli_query($conection, "SELECT * FROM ciudad");
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-12 mb-3">
+                        <div class="col-lg-6 mb-3">
                             <div class="card border-morado bg-dark">
                                 <div class="card-header bg-morado text-center">
                                     <h5 class="fw-bold">Mujeres por ciudad</h5>
@@ -236,7 +238,7 @@ $sentenciaCiudad = mysqli_query($conection, "SELECT * FROM ciudad");
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-12 mb-3">
+                        <div class="col-lg-6 mb-3">
                             <div class="card border-morado bg-dark">
                                 <div class="card-header bg-morado text-center">
                                     <h5 class="fw-bold">hombres por ciudad</h5>

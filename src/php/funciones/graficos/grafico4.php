@@ -3,7 +3,7 @@ header('Content-Type: application/json');
 
 require_once('../../database/connection.php');
 
-$sqlQuery = "SELECT SUM(totalMujeres+totalHombres)as total, c.Ciudad FROM registro_poblacional rp INNER JOIN ciudad c ON rp.idCiudad=c.idCiudad GROUP BY c.Ciudad";
+$sqlQuery = "SELECT SUM(totalHombres)as total, p.Pais FROM registro_poblacional rp INNER JOIN ciudad c ON rp.idCiudad=c.idCiudad INNER JOIN pais p ON c.Pais=p.idPais GROUP BY p.Pais";
 
 $result = mysqli_query($conection, $sqlQuery);
 
