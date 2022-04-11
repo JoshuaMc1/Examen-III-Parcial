@@ -1,0 +1,94 @@
+:root {
+    --color-secundario: #201C1C;
+    --color-primario: #121212;
+    --color-morado: #c13131;
+    --color-blaco: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+.text-morado {
+    color: var(--color-morado);
+}
+
+.bg-dark {
+    background-color: var(--color-primario);
+}
+
+.bg-morado {
+    background-color: var(--color-morado);
+    color: var(--color-blaco);    
+}
+
+.border-morado {
+    border: var(--color-morado) solid 1px;
+}
+
+.btn-morado {
+    background-color: var(--color-morado);
+    color: var(--color-blaco);
+}
+
+.btn-morado:hover {
+    background-color: var(--color-primario);
+    border: var(--color-morado) 1px solid;
+    color: var(--color-morado);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--color-primario);
+}
+
+.contenedor {
+    background-color: var(--color-secundario);
+    min-height: 80vh;
+    width: 80%;
+    border-radius: 1rem;
+    border: var(--color-morado) 1px solid;
+}
+
+.main-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--color-primario);
+}
+
+.contenedor-view {
+    background-color: var(--color-secundario);
+    min-height: 50vh;
+    width: 50%;
+    border-radius: 1rem;
+    border: var(--color-morado) 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scrol-tabla {
+    overflow-y: scroll;
+    max-height: 80vh;
+}
+
+.scrol-tabla::-webkit-scrollbar {
+    width: 15px;
+}
+
+.scrol-tabla::-webkit-scrollbar-track {
+    background: var(--color-morado);
+}
+
+.scrol-tabla::-webkit-scrollbar-thumb {
+    background-color: var(--color-blanco);
+    border-radius: 20px;
+    border: 3px solid var(--color-morado);
+}
